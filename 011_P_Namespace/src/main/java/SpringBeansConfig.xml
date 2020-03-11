@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- <bean id="beanOgrenci" class="com.furkanyilmaz.Ogrenci">
+		<property name="adi" value="Taha"/>
+		<property name="soyadi" value="Yılmaz"/>
+		<property name="numarasi" value="1999"/>
+		<property name="universitesi" ref="beanOkul"></property>
+	</bean> -->
+	
+	<bean id="beanOgrenci" class="com.furkanyilmaz.Ogrenci"
+		p:adi="Taha"
+		p:soyadi="Yılmaz"
+		p:numarasi="1999"
+		p:universitesi-ref="beanOkul"
+		/>
+
+	<bean id="beanOkul" class="com.furkanyilmaz.Okul">
+		<property name="kurumAdi" value="Atatürk Üniversitesi"></property>
+	</bean>
+</beans>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	
+	<bean id="selam" class="com.furkanyilmaz.Selam">
+		<property name="mesaj1" value="Merhaba mesajı 1."/>
+		<property name="mesaj2" value="Merhaba mesajı 2."/>
+	</bean>
+	<bean id="yazar" class="com.furkanyilmaz.Yazar" parent="selam">
+		<property name="mesaj1" value="Yazar mesajı 1."/>
+		<property name="mesaj3" value="Yazar mesajı 3."/>
+	</bean>
+</beans>

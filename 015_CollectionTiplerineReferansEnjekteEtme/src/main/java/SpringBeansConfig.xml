@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="BeanOgrenci" class="com.furkanyilmaz.Ogrenci">
+		<property name="adi" value="Furkan Cevat"></property>
+		<property name="soyadi" value="Yılmaz"></property>
+		<property name="bolumu" value="Bilgisayar Mühendisliği"></property>
+		<property name="yasi" value="24"></property>
+	</bean>
+	<bean id="BeanKoleksiyonlar" class="com.furkanyilmaz.Koleksiyonlar">
+		<property name="listeler">	
+			<list>
+				<value>Ahmet Emre</value>
+				<ref bean="BeanOgrenci" />
+				<value>Mustafa Sandal</value>
+				
+				<bean class="com.furkanyilmaz.Ogrenci">
+					<property name="adi" value="Ahmet"></property>
+					<property name="soyadi" value="Kaçar"></property>
+					<property name="bolumu" value="Elektrik Mühendisliği"></property>
+					<property name="yasi" value="29"></property>
+				</bean>
+			</list>
+		</property>
+		<property name="setler">
+			<set>
+				<value>Emre Ahmet</value>
+				<ref bean="BeanOgrenci" />
+				<value>Murat Boz</value>
+				
+				<bean class="com.furkanyilmaz.Ogrenci">
+					<property name="adi" value="Tahsin"></property>
+					<property name="soyadi" value="Özdemir"></property>
+					<property name="bolumu" value="İnşaat Mühendisliği"></property>
+					<property name="yasi" value="30"></property>
+				</bean>
+			</set>
+		</property>
+		<property name="mapler">
+			<map>
+				<entry key="JSP" value="Sami Sefa"></entry>
+				<entry key="JSF" value="Sinan Meydan"></entry>
+				<entry key="Spring" value-ref="BeanOgrenci"></entry>
+				<entry key="Hibernate">
+					<bean class="com.furkanyilmaz.Ogrenci">
+						<property name="adi" value="Seda"></property>
+						<property name="soyadi" value="Çınar"></property>
+						<property name="bolumu" value="Kimya Mühendisliği"></property>
+						<property name="yasi" value="22"></property>
+					</bean>
+				</entry>
+			</map>
+		</property>
+		<property name="propertiesler">
+			<props>
+				<prop key="WebService">Uğur Özalp</prop>
+				<prop key="Android">Emre Coşkun</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<bean id="beanAdres" class="com.furkanyilmaz.Adres">
+		<property name="mahalle" value="Karşıyaka"/>
+		<property name="sehir" value="Tokat"/>
+		<property name="semt" value="Merkez"/>
+	</bean>
+	
+	<!-- <bean id="beanCalisan" class="com.furkanyilmaz.Calisan">
+		<constructor-arg name="adi" value="Furkan"/>
+		<constructor-arg name="soyadi" value="Yılmaz"/>
+		<constructor-arg name="yas" value="24"/>
+		<constructor-arg name="adres" ref="beanAdres"/>
+	</bean> -->
+	
+	<bean id="beanCalisan2" class="com.furkanyilmaz.Calisan"
+		c:adi="Furkan"
+		c:soyadi="Yılmaz"
+		c:yas="24"
+		c:adres-ref="beanAdres"/>
+		
+	<!-- <bean id="beanCalisan3" class="com.furkanyilmaz.Calisan"
+		c:_0="Furkan"
+		c:_1="Yılmaz"
+		c:_2="24"
+		c:_3-ref="beanAdres"/> -->
+	
+</beans>

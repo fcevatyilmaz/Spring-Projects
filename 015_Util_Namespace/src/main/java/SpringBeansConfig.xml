@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+
+	<bean id="BeanPersonel" class="com.furkanyilmaz.Personel">
+		<property name="listler">
+			<util:list list-class="java.util.ArrayList">
+				<value>C</value>
+				<value>B</value>
+				<value>A</value>
+				<value>Z</value>
+				<value>T</value>
+				<value>D</value>
+			</util:list>
+		</property>
+	</bean>
+
+	<bean id="BeanPersonel2" class="com.furkanyilmaz.Personel">
+		<property name="setler">
+			<util:set>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+				<value>B</value>
+				<value>Z</value>
+				<value>D</value>
+			</util:set>
+		</property>
+	</bean>
+	<bean id="BeanSehir" class="com.furkanyilmaz.Sehir">
+		<property name="mapler">
+			<util:map map-class="java.util.TreeMap">
+				<entry key="Ankara" value="06"></entry>
+				<entry key="Nevşehir" value="50"></entry>
+				<entry key="Adana" value="01"></entry>
+				<entry key="Ağrı" value="04"></entry>
+				<entry key="Trabzon" value="61"></entry>
+				<entry key="Balıkesir" value="10"></entry>
+				<entry key="Tokat" value="60"></entry>
+			</util:map>
+		</property>
+	</bean>
+</beans>
