@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<context:annotation-config/>
+	<context:component-scan base-package="com.furkanyilmaz"/>
+	
+	<!-- <bean id="sayilarBean" class="com.furkanyilmaz.Sayilar">
+		<property name="sayi1" value="10"/>
+		<property name="sayi2" value="20"/>
+		<property name="sayi3" value="30"/>
+		<property name="sayi4" value="40"/>
+		<property name="sayi5" value="50"/>
+	</bean>
+
+
+	<bean id="operatorlerBean" class="com.furkanyilmaz.Operatorler">
+		<property name="equalTest"
+			value="#{sayilarBean.sayi1 eq 10}">
+		</property>
+		
+		<property name="notEqualTest"
+			value="#{sayilarBean.sayi1 != 1453}">
+		</property>
+
+		
+		<property name="lessThanTest"
+			value="#{sayilarBean.sayi2 lt 1453}">
+		</property>
+		
+		<property name="lessThanOrEqualTest"
+			value="#{sayilarBean.sayi5 le 49}">
+		</property>
+		
+		<property name="andTest"
+			value="#{sayilarBean.sayi3 == 10 and sayilarBean.sayi5 le 49}">
+		</property>
+		
+		<property name="divisionTest"
+			value="#{sayilarBean.sayi3 / 10 + sayilarBean.sayi5 * 49}">
+		</property>
+		
+		<property name="exponentionalTest"
+			value="#{9 ^ 2}">
+		</property>
+		
+		
+		
+		
+	</bean> -->
+</beans>

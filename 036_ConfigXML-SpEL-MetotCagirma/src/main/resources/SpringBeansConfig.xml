@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="kitapBean" class="com.furkanyilmaz.Kitap">
+		<property name="eserAdi" value="Savaş ve Barış"></property>
+		<property name="eserISBN" value="1234567890"></property>
+	</bean>
+	
+	<bean id="yazarBean" class="com.furkanyilmaz.Yazar">
+		<property name="adi" value="Lev"></property>
+		<property name="soyadi" value="Tolstoy"></property>
+		<property name="kitapAdi" value="#{kitapBean.eserAdi}"></property> 
+		<property name="kitap" value="#{kitapBean}"></property>
+<!-- 		<property name="bilgi" value="#{kitapBean.kitapBilgisiYaz('Fyodor','Dostoyevski','Budala','24895413652')}"></property> -->
+		<property name="bilgi" value="#{kitapBean.kitapBilgisiYaz('Fyodor','Dostoyevski',kitapBean.eserAdi,'24895413652')}"></property>
+	
+	</bean>
+</beans>
