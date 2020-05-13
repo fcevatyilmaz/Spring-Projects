@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+
+	<bean id="beanPersonel1" class="com.furkanyilmaz.model.Personel">
+		<property name="adi" value="Furkan"></property>
+		<property name="soyadi" value="Yilmaz"></property>
+		<property name="tecrube" value="#{5+3}"></property>
+	</bean>
+	<bean id="beanPersonel2" class="com.furkanyilmaz.model.Personel">
+		<property name="adi" value="Burak"></property>
+		<property name="soyadi" value="Top"></property>
+		<property name="tecrube" value="4"></property>
+	</bean>
+	<bean id="beanAopGorevleri"
+		class="com.furkanyilmaz.services.aop.AopGorevleri">
+	</bean>
+	<bean id="beanPersonelProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="beanPersonel1"/>
+		<property name="interceptorNames">
+			<list>
+				<value>beanAopGorevleri</value>
+			</list>
+		</property>
+	</bean>
+	
+</beans>
